@@ -1,0 +1,7 @@
+<form action="/article/" method="post">
+{% csrf_token %}
+<table>
+{{ article_form.as_table }}
+</table>
+<input type="submit" value="Save" />
+</form>
