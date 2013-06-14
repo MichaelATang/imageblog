@@ -1,3 +1,15 @@
-{% for article in object_list %}
-    {{ article.title}}
+{% extends "blog/base.html" %}
+
+{% block content%}
+{% for article in latest_article_list %}
+
+    <a style="background: #ccc;" href="/article_detail/{{ article.id}}">{{ article.title}} </a> </br>
+	<div >{{ article.body|slice:":100"}}</div>	
+	<div> <img alt="image" height="100px"  width= "100ps" src='{{ article.images }} '/> </div>	 
+	
+	</br>
+	
+	</hr>
+	
 {% endfor %}	
+{% endblock%}

@@ -10,14 +10,11 @@ from django.http import HttpResponse
 from blog.models import Article
 from blog.forms import ArticleForm
 
-class Index(ListView):
-
-    model = Article
-
-    def get_context_data(self, **kwargs):
-        context = super(Index, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
+def articles(request):
+    latest_article_list = Article.objects.all().order_by('date_published')
+   
+    return render_to_response('blog/article_list.html',
+    {'latest_article_list': latest_article_list,})
 
 		
 def article_add(request):
@@ -33,3 +30,10 @@ def article_add(request):
     return render_to_response('blog/contact.html',
                               {'article_form': form},
                               context_instance=RequestContext(request))
+							  
+							  
+							  
+def article_detail(request, article_id):
+	article = Article.objects.filter(pk=article_id)
+	#return HttpResponse('Details of Record: ' + article_id )
+	return render_to_response('blog/article_detail.html',{'article_detail': article,})

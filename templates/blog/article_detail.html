@@ -1,0 +1,26 @@
+
+<a href='http://localhost:8000'>Home</a>
+{% for article in article_detail %}
+
+    <h1>{{ article.title}} </h1>
+    <div >{{ article.body}}</div>	
+    <div> <img alt="image" height="100px"  width= "100ps" src='{{ article.images }} '/> </div>	 
+
+    <div> date published: {{ article.date_published }} </div>
+    </br>
+    <hr>
+
+	{% for comm in article.comment_set.all %}
+           
+	   <img height="30px" width="30px" src='{{ comm.user_image}}' />
+	    {{ comm.display_name }}
+	    </br>
+            {{ comm.comment }}
+	    {{ comm.date_published }}
+	    </br></br>	
+
+	{% endfor %}
+	
+
+
+{% endfor %}	

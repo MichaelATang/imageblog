@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 # User imports
-from blog.views import Index, article_add
+from blog.views import articles, article_add, article_detail
 
 urlpatterns = patterns('',
     # Examples:
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^article/$', article_add),
-    url(r'^$', Index.as_view(), name='article-list'),
+	url(r'^add_article/$', article_add),
+	url(r'^article_detail/(?P<article_id>\d)$', article_detail),
+    url(r'^$', articles, name='article-list'),
 )
