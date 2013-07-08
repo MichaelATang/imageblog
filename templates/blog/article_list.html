@@ -3,12 +3,11 @@
 {% block content%}
 {% for article in latest_article_list %}
 
-    <a style="background: #ccc;" href="/article_detail/{{ article.id}}">{{ article.title}} </a> </br>
-	<div >{{ article.body|slice:":100"}}</div>	
-	<div> <img alt="image" height="100px"  width= "100ps" src='{{ article.images }} '/> </div>	 
-	
-	</br>
-	
+    <h3><a href="/article_detail/{{ article.id}}">{{ article.title}} </a></h3>
+    <div class="thumbnails"> <img  src='{{ article.images }} '/> </div>	 	
+    <br>
+	<p style="color: white">{{ article.body|slice:":100"}}</p>		
+	</br>	
 	</hr>
 	
 {% endfor %}	

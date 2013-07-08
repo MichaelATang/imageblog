@@ -4,10 +4,21 @@
 <title>Geekologie - Gadgets, Gizmos, and Awesome</title>
 <!-- <link href="/static/imageblog/dark.css" rel="stylesheet" type="text/css"> -->
 <link rel="stylesheet" href="/static/imageblog/bootstrap/css/bootstrap.css">
+<link href="/static/imageblog/bootstrap/css/bootstrap.icon-large.min.css" rel="stylesheet">
+<style type="text/css">
+      
+      .right_display{
+         color:white;
+         font-family: 'PT Sans Narrow',sans-serif,Arial,Helvetica;         
+         text-align: left;         
+      }
+
+</style>
+
 
 </head>
 
-<body style = "background: url('/static/imageblog/bg-test.jpg')">
+<body style = "background: url('/static/imageblog/bg-test.jpg') no-repeat scroll center top rgb(0, 0, 0">
 
 
 
@@ -23,7 +34,7 @@
   					<li><a href="#">GEEKOLOGIE</a></li>  
   					<li><a href="#">I WATCH STUFF</a></li>  
   					<li><a href="#">THE SUPERFICIAL</a></li>  
-  					<li><a href="#"><i class="icon-umbrella"></i>Facebook</a></li>
+  					<li><a href="#"><i class="icon-large icon-facebook icon-white"></i></a></li>
   					<li><a href="#"><i class="icon-twitter icon-white"></i>twitter</a></li>
 				</ul>   
     		</div>
@@ -43,7 +54,7 @@
 
 <div class = "container-fluid">
 	<div class = "row-fluid">
-		<div class= "span3">
+		<div class= "span2">
 			<ul class = "nav nav-list">			
 				<li class="nav-header"> Control Menu </li>
 				<li><a href="#">Add Article</a></li>			
@@ -51,13 +62,13 @@
 				<li><a href="#">Delete Article</a></li>	
 			</ul>	
 		</div>
-		<div class="span7">
+		<div class="span8">
 		<!--Body content-->
 	   		<a href="/">
-      			<img src="/static/imageblog/bg-header-test.jpg" border="0">
+      			<img src="/static/imageblog/bg-header-test.jpg" border="0" style="width : 1000px; Height:125px; display: block; text-align: center">
   			</a>
   			
-  			<div class="navbar">  
+  			<div class="navbar navbar-inverse " >  
   			<div class="navbar-inner">  
     			<div class="container"> 
     				<ul class="nav">  
@@ -79,13 +90,28 @@
 			</div>
 
 
-			<div class="container">
+			<div class="container span8">
  				{% block content %}
  				{% endblock %}
-    		</div>  
+      </div>
+      <div class="container span3">          
+         <div class="right_display">Lemons To Lemonade: Car Dent Turned Into Ninja Turtle</div>
+             <div class="thumbnails"> 
+                  <img  src='http://geekologie.com/2013/07/08/ninja-turtle-face-fender-bender.jpg'/> 
+             </div>
+          <hr/>   
+          <div class="right_display">Lemons To Lemonade: Car Dent Turned Into Ninja Turtle</div>
+             <div class="thumbnails"> 
+                  <img  src='http://geekologie.com/2013/07/08/ninja-turtle-face-fender-bender.jpg'/> 
+             </div>                         
+    	</div>  
+      
+
 
 		</div>
 	</div>	
+
+<!-- End of Fluid Container  -->
 </div>	
 
 
